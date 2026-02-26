@@ -39,3 +39,7 @@ This is the governance equivalent of model maintenance: evaluator quality is mon
 - **State substrate**: consensus-tools decisions + persona artifacts
 - **Primary output**: `persona_respawn` + updated `persona_set`
 - **Primary benefit**: adaptive evaluator evolution with auditability
+
+## Tool-call boundary
+
+To avoid orchestration drift, this skill routes board operations through the consensus-interact contract surface (directly or via guard-core wrappers). This preserves a single governance interaction model while allowing domain-specific decision logic.

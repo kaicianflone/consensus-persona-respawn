@@ -36,3 +36,13 @@ Extends persona-generator with long-term adaptation and ties directly into board
 ```bash
 node --import tsx run.js --input ./examples/input.json
 ```
+
+## Tool-call integration
+
+This skill is wired to the consensus-interact contract boundary (via shared consensus-guard-core wrappers where applicable):
+- readBoardPolicy
+- getLatestPersonaSet / getPersonaSet
+- writeArtifact / writeDecision
+- idempotent decision lookup
+
+This keeps board orchestration standardized across skills.
