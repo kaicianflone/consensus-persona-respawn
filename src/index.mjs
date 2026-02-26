@@ -128,3 +128,7 @@ export async function handler(input, opts={}){
     return err(board_id||'', 'PERSONA_RESPAWN_FAILED', e.message||'unknown');
   }
 }
+
+export async function invoke(input, opts = {}) {
+  return handler(input, opts);
+}
