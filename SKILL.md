@@ -1,42 +1,38 @@
 ---
 name: consensus-persona-respawn
-description: Open-source Consensus.Tools skill for governed AI decisions with board-native artifacts, strict JSON contracts, and deterministic policy behavior.
+description: Ledger-informed persona lifecycle management. Replaces low-performing personas with successor personas derived from mistake patterns in board decision history, preserving adaptive governance over long-running automation.
 homepage: https://github.com/kaicianflone/consensus-persona-respawn
 source: https://github.com/kaicianflone/consensus-persona-respawn
 ---
 
 # consensus-persona-respawn
 
-This skill is part of the Consensus.Tools ecosystem and is designed for production-grade agent governance.
+`consensus-persona-respawn` is the adaptive maintenance loop for persona governance.
 
-## Why this skill exists
+## What this skill does
 
-Most agent systems fail because a single model decides and executes without explicit arbitration. This skill addresses that by applying consensus-style controls:
+- identifies dead/weak personas by trigger or reputation threshold
+- mines historical decision artifacts for mistake patterns
+- generates successor persona profiles informed by those failures
+- writes `persona_respawn` and updated `persona_set` artifacts
+- keeps governance panel quality from stagnating
 
-- structured multi-perspective evaluation
-- hard-block safety checks
-- deterministic aggregation and replayable outputs
-- board-native artifact persistence for auditing
+## Why this matters
 
-## Core capabilities
+A static evaluator panel drifts over time. This skill provides lifecycle renewal so consensus quality improves instead of degrading.
 
-- strict input/output JSON contracts for pipeline integration
-- deterministic policy evaluation where possible
-- idempotent retry behavior to avoid duplicate side effects
-- versioned artifacts written to board ledger history
+## Ecosystem role
 
-## Stack assumptions
+Extends persona-generator with long-term adaptation and ties directly into board-ledger evidence.
 
-- built to compose with consensus-interact workflows
-- uses consensus-tools board/job/submission primitives
-- designed to integrate with persona-generator persona_set artifacts
+## Best use cases
+
+- long-running agent teams
+- recurring decision domains with repeated failure classes
+- autonomous systems requiring evaluator maintenance
 
 ## Quick start
 
-Use the repo examples and run script to execute locally.
-
-## Expected outcomes
-
-- a decision/result artifact persisted to board state
-- optional updated persona_set artifact for adaptive governance
-- machine-parseable output suitable for automation systems
+```bash
+node --import tsx run.js --input ./examples/input.json
+```
