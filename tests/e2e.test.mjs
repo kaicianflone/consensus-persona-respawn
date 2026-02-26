@@ -30,3 +30,11 @@ test('strict schema reject', async()=>{
   assert.equal(Boolean(out.error), true);
   assert.equal(out.error.code, 'INVALID_INPUT');
 });
+
+
+test('example input json stays executable', async()=>{
+  const example = JSON.parse(fs.readFileSync(new URL('../examples/input.json', import.meta.url), 'utf8'));
+  if (!example.board_id) example.board_id = 'board_test';
+  const out = await handler(example,{statePath:tmp()});
+  assert.equal(Boolean(out.error), false);
+});
