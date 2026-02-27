@@ -4,7 +4,7 @@ description: Ledger-informed persona lifecycle management. Replaces low-performi
 homepage: https://github.com/kaicianflone/consensus-persona-respawn
 source: https://github.com/kaicianflone/consensus-persona-respawn
 metadata:
-  {"openclaw": {"requires": {"bins": ["node", "npm", "tsx"]}}}
+  {"openclaw": {"requires": {"bins": ["node", "tsx"]}}}
 ---
 
 # consensus-persona-respawn
@@ -32,6 +32,21 @@ Extends persona-generator with long-term adaptation and ties directly into board
 - long-running agent teams
 - recurring decision domains with repeated failure classes
 - autonomous systems requiring evaluator maintenance
+
+
+## Runtime, credentials, and network behavior
+
+- runtime binaries: `node`, `tsx`
+- network calls: none in the guard decision path itself
+- conditional network behavior: if a run needs persona generation and your persona-generator backend uses an external LLM, that backend may perform outbound API calls
+- credentials: `OPENAI_API_KEY` (or equivalent provider key) may be required **only** for persona generation in LLM-backed setups; if `persona_set_id` is provided, guards can run without LLM credentials
+- filesystem writes: board/state artifacts under the configured consensus state path
+
+## Dependency trust model
+
+- `consensus-guard-core` and `consensus-persona-generator` are first-party consensus packages
+- versions are semver-pinned in `package.json` for reproducible installs
+- this skill does not request host-wide privileges and does not mutate other skills
 
 ## Quick start
 
