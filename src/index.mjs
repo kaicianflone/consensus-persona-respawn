@@ -1,7 +1,7 @@
 import crypto from 'node:crypto';
 import { JsonStorage } from '@consensus-tools/consensus-tools/src/storage/JsonStorage.ts';
 import { handler as personaGen } from '../../consensus-persona-generator/src/index.mjs';
-import { rejectUnknown, getLatest, getPersonaSet, writeArtifact, makeIdempotencyKey } from 'consensus-guard-core/src/index.mjs';
+import { rejectUnknown, getLatest, getPersonaSet, writeArtifact, makeIdempotencyKey, resolveStatePath } from 'consensus-guard-core/src/index.mjs';
 
 const TOP = new Set(['board_id','trigger','persona_set_id','lookback_decisions']);
 const TRIGGER = new Set(['persona_id','min_reputation','reason']);
@@ -65,7 +65,7 @@ function mutatePersona(oldPersona, learning){
 
 export async function handler(input, opts={}){
   const board_id = input?.board_id;
-  const statePath = opts.statePath || process.env.CONSENSUS_STATE_FILE || './.consensus/board-state.json';
+  const statePath = resolveStatePath(opts);
   try {
     const ve = validate(input); if (ve) return err(board_id||'', 'INVALID_INPUT', ve);
 
