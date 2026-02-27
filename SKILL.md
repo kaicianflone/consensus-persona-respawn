@@ -3,6 +3,8 @@ name: consensus-persona-respawn
 description: Ledger-informed persona lifecycle management. Replaces low-performing personas with successor personas derived from mistake patterns in board decision history, preserving adaptive governance over long-running automation.
 homepage: https://github.com/kaicianflone/consensus-persona-respawn
 source: https://github.com/kaicianflone/consensus-persona-respawn
+metadata:
+  {"openclaw": {"requires": {"bins": ["node", "npm", "tsx"]}}}
 ---
 
 # consensus-persona-respawn

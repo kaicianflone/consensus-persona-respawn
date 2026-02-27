@@ -1,6 +1,6 @@
 import crypto from 'node:crypto';
 import { JsonStorage } from '@consensus-tools/consensus-tools/src/storage/JsonStorage.ts';
-import { handler as personaGen } from '../../consensus-persona-generator/src/index.mjs';
+import { handler as personaGen } from 'consensus-persona-generator/src/index.mjs';
 import { rejectUnknown, getLatest, getPersonaSet, writeArtifact, makeIdempotencyKey, resolveStatePath } from 'consensus-guard-core/src/index.mjs';
 
 const TOP = new Set(['board_id','trigger','persona_set_id','lookback_decisions']);
