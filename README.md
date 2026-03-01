@@ -1,25 +1,25 @@
 # consensus-persona-respawn
 
-Lifecycle management for consensus personas.
+Lifecycle management for persona quality in long-running consensus systems.
 
-`consensus-persona-respawn` replaces dead or degraded personas with ledger-informed successors, preserving governance continuity while adapting to failure patterns.
+`consensus-persona-respawn` replaces dead or degraded personas with lineage-aware successors informed by decision artifacts and ledger history.
 
-## Why it matters
+## Why this matters
 
-Static persona sets decay over time. Respawn keeps your decision system healthy by evolving weak performers instead of letting governance quality drift.
+Static persona sets decay over time. Respawn mechanisms preserve governance quality by adapting poor performers while keeping decision history auditable.
 
 ## Core capabilities
 
 - strict schema validation
-- idempotent respawn decisions
-- lineage-aware persona replacement
-- board-native artifact writes for audit and replay
+- idempotent respawn execution
+- successor generation tied to historical performance
+- board-native artifact writes with lineage metadata
 
-## Best use cases
+## Ideal use cases
 
-- long-running guard systems
-- recurring policy domains with drift
-- governance loops that require explicit adaptation history
+- long-lived guard deployments
+- repeated policy domains with quality drift
+- governance systems that require explicit adaptation history
 
 ## Quick start
 
@@ -34,6 +34,7 @@ node --import tsx run.js --input ./examples/input.json
 npm test
 ```
 
-## Continuous improvement
+## Related docs
 
-See `AI-SELF-IMPROVEMENT.md` for how to tune respawn heuristics safely.
+- `SKILL.md`
+- `AI-SELF-IMPROVEMENT.md`
