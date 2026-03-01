@@ -1,6 +1,6 @@
 ---
 name: consensus-persona-respawn
-description: Ledger-informed persona lifecycle management. Replaces low-performing personas with successor personas derived from mistake patterns in board decision history, preserving adaptive governance over long-running automation.
+description: Ledger-informed persona lifecycle management. Replaces low-performing personas with successor personas derived from mistake patterns in board decision history, preserving adaptive governance over long-running automation. Reputation updates are computed by consensus-persona-engine.
 homepage: https://github.com/kaicianflone/consensus-persona-respawn
 source: https://github.com/kaicianflone/consensus-persona-respawn
 metadata:
@@ -25,7 +25,7 @@ A static evaluator panel drifts over time. This skill provides lifecycle renewal
 
 ## Ecosystem role
 
-Extends persona-generator with long-term adaptation and ties directly into board-ledger evidence.
+Consumes persona-engine outputs for long-term adaptation and ties directly into board-ledger evidence.
 
 ## Best use cases
 
@@ -71,4 +71,4 @@ This skill exposes a canonical entrypoint:
 
 - `invoke(input, opts?) -> Promise<OutputJson | ErrorJson>`
 
-`invoke()` starts the guard flow, which then executes persona evaluation and consensus-interact-contract board operations (via shared guard-core wrappers where applicable).
+`invoke()` executes persona replacement based on lineage and failure patterns. Reputation deltas are expected from consensus-persona-engine outputs.

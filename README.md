@@ -2,7 +2,7 @@
 
 Lifecycle management for persona quality in long-running consensus systems.
 
-`consensus-persona-respawn` replaces dead or degraded personas with lineage-aware successors informed by decision artifacts and ledger history.
+`consensus-persona-respawn` replaces dead or degraded personas with lineage-aware successors informed by decision artifacts, ledger history, and persona-engine reputation outcomes.
 
 ## Why this matters
 
