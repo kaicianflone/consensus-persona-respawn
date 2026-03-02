@@ -1,7 +1,7 @@
 ---
 name: consensus-persona-respawn
 description: Ledger-informed persona lifecycle management. Replaces low-performing personas with successor personas derived from mistake patterns in board decision history, preserving adaptive governance over long-running automation. Reputation updates are computed by consensus-persona-engine.
-version: 1.1.12
+version: 1.1.13
 homepage: https://github.com/kaicianflone/consensus-persona-respawn
 source: https://github.com/kaicianflone/consensus-persona-respawn
 upstream:
